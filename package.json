@@ -1,0 +1,32 @@
+{
+  "name": "eventLearnings-ES6",
+  "version": "1.0.0",
+  "description": "This repository is a public learning ground for ES6 event handling on static websites",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "js": "babel src/js/parallax.js --out-file src/dist/js/parallax.js"
+  },
+  "keywords": [
+    "bootstrap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jrbrowning/eventLearnings-ES6.git"
+  },
+  "author": "jrbrowning",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.2.1",
+    "popper.js": "1.12.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
