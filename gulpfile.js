@@ -7,7 +7,7 @@ const babel = require('gulp-babel');
 gulp.task('sass', function() {
 	return gulp.src(['src/scss/*.scss'])
 		.pipe(sass())
-		.pipe(gulp.dest("src/css"))
+		.pipe(gulp.dest("./dist/css"))
 		.pipe(browserSync.stream());
 	});
 
@@ -18,7 +18,7 @@ gulp.task('es6', function () {
 			presets: ['env'],
             ignore: ['./src/js/bootstrap.min.js','./src/js/popper.min.js','./src/js/jquery.min.js']
         }))
-        .pipe(gulp.dest("./src/dist/js"))
+        .pipe(gulp.dest("./dist/js"))
         .pipe(browserSync.stream());
 });
 
@@ -27,12 +27,12 @@ gulp.task('serve', ['sass', 'es6'], function() {
 	browserSync.init({
 		// Will not attempt to determine your network status, assumes you're OFFLINE
 //		online: false,
-		server: "./src"
+		server: "./"
 		});
 
 	gulp.watch(['src/scss/*.scss'],['sass']);
 	gulp.watch(['src/js/*.js'],['es6']);
-	gulp.watch("src/*.html").on('change', browserSync.reload);
+	gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default',['serve']);
